@@ -1,0 +1,39 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}
+sarva palakaya Foundation
+{% endblock %}
+
+
+{% block body %}
+
+<div class="main m-5">
+    <p>1- Feed for needy people</p>
+    <p>2- Vidya: A caring hand</p>
+
+    <div class="images">
+        <img src="{% static 'images/1.jpg' %}" class="img-thumbnail" alt="...">
+        <img src="{% static 'images/3.jpg' %}" class="img-thumbnail" alt="...">
+        <img src="{% static 'images/4.jpg' %}" class="img-thumbnail" alt="...">
+        <img src="{% static 'images/5.jpg' %}" class="img-thumbnail" alt="...">
+        <img src="{% static 'images/6.jpg' %}" class="img-thumbnail" alt="...">
+    </div>
+
+
+</div>
+<style>
+    .img-thumbnail {
+        max-width: 300px;
+        margin: 6px;
+
+    }
+
+    .images {
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>
+
+
+{% endblock body %}

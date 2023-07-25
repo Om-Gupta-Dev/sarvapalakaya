@@ -1,0 +1,121 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title %}
+sarva palakaya Foundation
+{% endblock %}
+
+
+{% block body %}
+
+{% if csubmit %}
+<h2 class="text-danger mb-5">👏Your Query will se solved at the earliest... </h2>
+{% else %}
+
+<form action="" method="post" class="p-3 m-2 rounded"> {% csrf_token %}
+    <h5 class="flexend pl-5"> <strong>Tell us query : </strong> </h5>
+    <div class="text-danger">
+        {% if errors %}
+        {{ errors }}
+        {% endif %}
+    </div>
+    <div class="mb-3">
+        <label for="id_name" class="">Name :</label><br>{{form.name}}
+    </div>
+
+    <div class="mb-3">
+        <label for="id_phone" class="form-label">Phone Number</label>
+        <br>{{form.phone}}
+    </div>
+    <div class="mb-3">
+        <label for="id_email" class="form-label">Email address</label>
+        <br>{{form.email}}
+    </div>
+    <div class="mb-3">
+        <label for="id_query" class="form-label">Your Query</label>
+        <br>{{form.query}}
+    </div>
+
+    <button type="submit" class="btn btn-primary ml-auto">Submit</button>
+
+
+</form>
+{% endif %}
+
+<h3 class="ml-5">Our Locations :</h3>
+<div class="addresses m-3">
+
+    <div class="card" style="width: 18rem; margin:5px;">
+        <div class="card-body">
+            <h5 class="card-title">Head Office</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Lucknow(Uttar Pradesh)</h6>
+            <p class="card-text">H.No 592-CHHA/672/15, New swaroop Nagar Kharika Telibagh, Lucknow up.</p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem; margin:5px;">
+        <div class="card-body">
+            <h5 class="card-title">Regional Branch</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Ranchi(Jharkhand)</h6>
+            <p class="card-text">Pilger lane, PO- Church road, Ranchi Jharkhand 834001</p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem; margin:5px;">
+        <div class="card-body">
+            <h5 class="card-title">Regional Branch</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">kichha(Uttarakhand) </h6>
+            <p class="card-text">addr-H.no-324,Ward no-8,behind teshil and pant coloney kichha (udham.singh.nagar)
+                uttrakhand 263148.</p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem; margin:5px;">
+        <div class="card-body">
+            <h5 class="card-title">Or</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Mail us at : </h6>
+            <p class="card-text"><a class="ml-5"
+                    href="mailto:sarvapalakayafoundation@gmail.com">sarvapalakayafoundation@gmail.com</a></p>
+        </div>
+    </div>
+
+    <div class="card" style="width: 18rem; margin:5px;">
+        <div class="card-body">
+            <h5 class="card-title">And</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Follow us at : </h6>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<style>
+    .bi {
+        margin: 5px;
+    }
+
+
+
+    .flexend {
+        align-items: flex-end;
+    }
+
+    .ml-5 {
+        margin-left: 5px;
+    }
+
+    .card,
+    form {
+        background-color: rgba(238, 147, 233, 0.645);
+    }
+
+    .addresses {
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>
+
+
+{% endblock body %}
